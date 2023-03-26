@@ -10,7 +10,7 @@ function App() {
        <>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Dashboard />} />
+            <Route path='/' index element={<Dashboard />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
