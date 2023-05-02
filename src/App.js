@@ -10,7 +10,7 @@ function App() {
        <>
         <BrowserRouter>
           <Routes>
-            <Route path='/' index element={<Dashboard />} />
+            <Route path='/redux-toolkit-curd' index element={<Dashboard />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>

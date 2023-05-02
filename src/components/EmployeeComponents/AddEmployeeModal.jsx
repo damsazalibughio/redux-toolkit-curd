@@ -65,10 +65,10 @@ export const AddEmployeeModal = ({setShowModal}) => {
     
                           setEmployeeValidation([{success:true, error:false, message:'Employee Added'}])
                     }else{
-                        setEmployeeValidation([{ error:true, message:'Please provide correct Full name'}])
+                        setEmployeeValidation([{ error:true, message:'Please provide correct Email'}])
                     }
                 }else{
-                    setEmployeeValidation([{ error:true, message:'Please provide correct email'}])
+                    setEmployeeValidation([{ error:true, message:'Please provide correct Full Name'}])
                 }
 
             }
@@ -98,8 +98,8 @@ export const AddEmployeeModal = ({setShowModal}) => {
             <div className="modal-dialog" >
                 <div className="modal-content">
                 <div className="modal-header">
-                    <h1 className="modal-title fs-5">
-                    <i className="bi bi-person-fill text-info fs-2 me-3"></i>
+                    <h1 className="modal-title fs-6">
+                    <i className="bi bi-person-fill text-info fs-5 me-3"></i>
                         Add Employee
                     </h1>
                     <button type="button" className="button-close" onClick={() => setShowModal(false)}><i className="bi bi-x fs-2"></i></button>
@@ -126,7 +126,8 @@ export const AddEmployeeModal = ({setShowModal}) => {
                             
                         </div>
                         <div className="modal-footer">
-                            <button type="submit" className="btn btn-secondary">Add</button>
+                            <button type="submit" className="btn btn-info text-white">Add</button>
+                            <button type="submit" className="btn btn-secondary" onClick={() => setShowModal(false)}>close</button>
                         </div>
                     </form>
                     

@@ -73,11 +73,13 @@ export const Dashboard = () => {
     <div className='container-dashboard'>
       <div className="card mt-3" style={{width:'80%'}}>
         <div className="card-header">
-        <i className="bi bi-people-fill text-info fs-2"></i> Employee Record
+          <h3 className='fs-6'>
+           <i className="bi bi-people-fill text-info fs-4"></i> Employee Record
+          </h3>
         </div>
         <div className="card-body">
          <div className="record-header d-flex justify-content-between border-bottom pb-4">
-          <button type='button' className='btn btn-outline-secondary' onClick={() => setShowModal(true)}>Add Employee</button>
+          <button type='button' className='btn btn-sm btn-outline-secondary' onClick={() => setShowModal(true)}>Add Employee</button>
           <input type="text" className='form-control' name="search" placeholder='Search Employee...' style={{width:'25%'}} onChange={changeFilterEmployee}/>
          </div>
          <div className="employee-record">
@@ -85,12 +87,12 @@ export const Dashboard = () => {
          <table className="table table-striped table-responsive employee-table">
             <thead>
               <tr>
-                <th scope="col" style={{width:'10%'}}>#</th>
+                <th scope="col" style={{width:'5%'}}>#</th>
                 <th scope="col" >Full Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Role</th>
-                <th scope="col" style={{width:'10%'}}>{editingMode ? 'Update' : 'Edit'}</th>
-                <th scope="col" style={{width:'10%'}}>{editingMode ? 'Cancel' :'Delete'}</th>
+                <th scope="col" style={{width:'11%'}}>{editingMode ? 'Update' : 'Edit'}</th>
+                <th scope="col" style={{width:'11%'}}>{editingMode ? 'Cancel' :'Delete'}</th>
               </tr>
             </thead>
             <tbody>
@@ -111,12 +113,12 @@ export const Dashboard = () => {
                     <th scope="row">{++index}</th>
                     <td>{!employee.editStatus
                      ? employee.fullName
-                     : <input type='text' className='form-Control' name='fullName' value={editEmployeeData.fullName}  onChange={ editChangeHandler}/>
+                     : <input type='text' className='form-control' name='fullName' value={editEmployeeData.fullName}  onChange={ editChangeHandler}/>
                       }
                     </td>
                     <td>{!employee.editStatus
                      ? employee.email 
-                     : <input type='text' className='form-Control' name='email' value={editEmployeeData.email} onChange={editChangeHandler}/>
+                     : <input type='text' className='form-control' name='email' value={editEmployeeData.email} onChange={editChangeHandler}/>
                      }
                     </td>
                     <td>{!employee.editStatus
@@ -131,12 +133,12 @@ export const Dashboard = () => {
                       </td>
                     <td>{!employee.editStatus
                      ? <i className="bi bi-pencil-square" onClick={()=>editEmployee(employee)}></i>
-                     : <button type="button" className="btn btn-outline-success"  onClick={() => editEmployeeSuccess(employee.id)}>Update</button>
+                     : <button type="button" className="btn btn-sm btn-outline-success"  onClick={() => editEmployeeSuccess(employee.id)}>Update</button>
 
                         }
                      </td>
                     <td>{employee.editStatus 
-                      ? <button type="button" className="btn btn-outline-danger" onClick = {()=> dispatch(cancelUpdate({id:employee.id}))}>Cancel</button>
+                      ? <button type="button" className="btn btn-sm btn-outline-danger" onClick = {()=> dispatch(cancelUpdate({id:employee.id}))}>Cancel</button>
                       : <i className="bi bi-trash3-fill" onClick={() => getEmployeeId(employee.id)}></i>
                       }
                     </td>
